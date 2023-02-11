@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-transform: capitalize;
+    }
+    input{
+      text-transform: capitalize;
+    }
+  </style>
+</head>
+<body>
+  <h1 align="center">final dom event handlers</h1>
+  <h4 id="head-h4">default text</h4>
+
+  <p id="text"><b><i>simple input text: <strong id="addText"></strong></i></b></p>
+  <!-- <p id="text">simple input text</p> -->
+  <input type="text" id="input"> <button id="update" onclick="updates()">update</button> <br><br>
+  <button id="btn-1">event handler-1</button>
+  <button id="btn-2" onclick="btns1()">event handler-2</button>
+  <button id="btn-3">Click to hide text</button> <br> <br>
+  <button onclick="show()">show text</button>
+
+  <h3><a href="comment-box-pactise.html" target="_blank">Click To Open Comment Box Dom Pactise File:)</a></h3>
+  <h3><a href="dom-event-pactise.html" target="_blank">Click To Open Dom All Events Pactise File:)</a></h3>
+  <h3><a href="pactise-github-delete.html" target="_blank">Click To Open Use Delete Github System Pactise File:)</a></h3>
+</body>
+<script>
+
+const head = document.getElementById("head-h4")
+const btn1 = document.getElementById("btn-1")
+
+
+btn1.onclick=btns;
+function btns(){
+  head.innerText='Handled by function attached on onclick attribute'
+  head.style.display='inline-block'
+}
+
+function btns1(){
+  head.innerHTML='Text updated by add Event listener button'
+  head.style.display='inline-block'
+
+}
+
+document.getElementById("btn-3").addEventListener('click',function(){
+  head.style.display='none'
+})
+function show(){
+  head.style.display='block'
+}
+
+function updates(){
+  const inputField = document.getElementById("input")
+  const value =inputField.value
+  // const simpleText = document.getElementById("text")
+  const text = document.getElementById("addText")
+  text.style.color='tomato'
+  text.innerText=value
+  inputField.value=''
+}
+
+
+// document.getElementById("update").addEventListener('click',function(){
+//   const inputField = document.getElementById("input")
+//   const value =inputField.value
+//   const simpleText = document.getElementById("text")
+//   simpleText.innerText=value
+//   inputField.value=''
+// })
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pactise Github Delete Text System</title>
+    <style>
+    button{
+      cursor: pointer;
+    }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Github Text delete</h1>
+    <h3 id="delete-text">delete my secreat info</h3>
+    <h4 id="show-msg"></h4>
+    <input type="text" placeholder="please type only delete" id="input" />
+    <button id="delete-btn" disabled>delete</button>
+    <h3><a href="index.html">Back To Home 👩‍💻</a></h3>
+  </body>
+  <script>
+
+    const inputField = document.getElementById("input")
+    const deleteText = document.getElementById("delete-text")
+    const deleteBtn = document.getElementById("delete-btn")
+    const message = document.getElementById("show-msg")
+    document.getElementById("input").addEventListener('keyup',function(){
+    const value=inputField.value
+    if(value==='delete'){
+      deleteBtn.removeAttribute('disabled')
+    }else{
+      deleteBtn.setAttribute('disabled',true)
+    }
+  })
+
+  deleteBtn.addEventListener('click',()=>{
+    deleteText.style.display='none'
+    inputField.value=''
+    message.innerText='The text is successfully deleted 😀'
+  })
+
+
+  </script>
+</html>

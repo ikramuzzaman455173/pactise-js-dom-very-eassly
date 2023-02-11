@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pactise Dom Comment Box</title>
+  <style>
+    body{
+      text-transform: capitalize;
+      box-sizing:border-box;
+    }
+    p{
+      font-size:14px;
+    }
+    textarea{
+      text-transform: capitalize;
+      font-style: italic;
+      font-weight:bold;
+      color:#333;
+      font-size:20px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+  <h3 align="center">simple js dom programme add comment</h3>
+  <h4>Please Enter Your Comment 😀</h4>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt autem quisquam doloremque vitae rem facilis dignissimos ducimus nihil, dolore dolores?<br></p>
+  <p>Repellendus quis velit quos dolor unde laboriosam, eligendi a perferendis expedita eum incidunt cupiditate quia numquam soluta, aliquid ea odit!<br></p>
+  <p>Earum est corrupti cumque nemo libero excepturi molestias ea aspernatur repellendus molestiae quaerat mollitia fugit, eos ipsa reiciendis quisquam nam!<br></p>
+  <p id="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, hic?</p>
+  <textarea name="" id="cmt-box" cols="30" rows="5" autofocus></textarea><br><br>
+  <button id="post">Click The Post Your Comment</button>
+    <h3><a href="index.html">Back To Home 👩‍💻</a></h3>
+</body>
+
+<script>
+const comment = document.getElementById("comment")
+const cmtBox = document.getElementById("cmt-box")
+const post = document.getElementById("post")
+
+post.addEventListener('click',function(){
+  const value = cmtBox.value
+  const text = document.createElement("p")
+  text.innerHTML=value
+  comment.appendChild(text)
+  cmtBox.value=''
+})
+
+
+</script>
+</html>
